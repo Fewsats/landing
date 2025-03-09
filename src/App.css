@@ -22,7 +22,7 @@
 }
 
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em rgba(45, 127, 249, 0.6));
 }
 
 /* Restore specific animations from the template if needed */
@@ -59,4 +59,21 @@ html {
 main {
   min-height: 100vh;
   width: 100%;
+}
+
+/* Notion-like styles */
+.notion-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.notion-block {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 3px;
+  transition: background-color 0.1s;
+}
+
+.notion-block:hover {
+  background-color: rgba(55, 53, 47, 0.03);
 }
