@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { CreditCard, Landmark, Bitcoin } from 'lucide-react';
 
@@ -34,7 +33,7 @@ const PaymentMethods: React.FC = () => {
       <div className="container mx-auto px-4">
         <div ref={sectionRef} className="section-anim max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Flexible <span className="gradient-text">Payment Methods</span>
+            Flexible <span className="text-deep-blue">Payment Methods</span>
           </h2>
           <p className="text-neutral-dark/80 mb-8">
             Supporting both traditional and next-generation payment systems
@@ -42,7 +41,7 @@ const PaymentMethods: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 stagger-animation">
             <div className="card-glass">
-              <div className="h-16 w-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-gradient-to-r from-deep-blue/10 to-deep-purple/10">
+              <div className="h-16 w-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-deep-blue/10">
                 <Landmark className="h-8 w-8 text-deep-blue" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Bank Transfers / ACH</h3>
@@ -52,8 +51,8 @@ const PaymentMethods: React.FC = () => {
             </div>
 
             <div className="card-glass">
-              <div className="h-16 w-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-gradient-to-r from-deep-blue/10 to-deep-purple/10">
-                <CreditCard className="h-8 w-8 text-deep-purple" />
+              <div className="h-16 w-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-deep-blue/10">
+                <CreditCard className="h-8 w-8 text-deep-blue" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Credit Cards</h3>
               <p className="text-neutral-dark/80">
@@ -62,8 +61,8 @@ const PaymentMethods: React.FC = () => {
             </div>
 
             <div className="card-glass">
-              <div className="h-16 w-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-gradient-to-r from-deep-blue/10 to-deep-purple/10">
-                <Bitcoin className="h-8 w-8 text-bright-teal" />
+              <div className="h-16 w-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-deep-blue/10">
+                <Bitcoin className="h-8 w-8 text-deep-blue" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Cryptocurrency</h3>
               <p className="text-neutral-dark/80">

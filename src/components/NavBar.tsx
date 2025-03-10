@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
@@ -24,26 +23,27 @@ const NavBar: React.FC = () => {
       )}
     >
       <div className="container mx-auto flex items-center justify-between">
-        <div className="flex items-center">
-          <span className="font-bold text-2xl bg-gradient-to-r from-deep-blue to-deep-purple text-transparent bg-clip-text">
-            AI PayFlow
+        <div className="flex items-center gap-2">
+          <img src="/favicon.svg" alt="Fewsats Logo" width={32} height={32} className="text-deep-blue" />
+          <span className="font-bold text-2xl text-neutral-dark">
+            Fewsats
           </span>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#benefits" className="text-neutral-dark hover:text-deep-purple transition-colors">
-            Benefits
+          <a href="#clients" className="text-neutral-dark hover:text-deep-blue transition-colors">
+            For Clients
           </a>
-          <a href="#providers" className="text-neutral-dark hover:text-deep-purple transition-colors">
-            For Providers
+          <a href="#services" className="text-neutral-dark hover:text-deep-blue transition-colors">
+            For Services
           </a>
-          <a href="#payment-methods" className="text-neutral-dark hover:text-deep-purple transition-colors">
+          <a href="#payment-methods" className="text-neutral-dark hover:text-deep-blue transition-colors">
             Payment Methods
           </a>
-          <button className="bg-gradient-to-r from-deep-blue to-deep-purple text-white font-medium rounded-full px-6 py-2 hover:shadow-lg transition-all duration-300">
-            Get Early Access
-          </button>
+          <a href="https://app.fewsats.com" className="bg-deep-blue text-white font-medium rounded-full px-6 py-2 hover:shadow-lg transition-all duration-300" target="_blank" rel="noopener noreferrer">
+            Get Started
+          </a>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -59,29 +59,29 @@ const NavBar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 px-6 flex flex-col space-y-4 animate-fade-in">
           <a 
-            href="#benefits" 
-            className="text-neutral-dark hover:text-deep-purple transition-colors py-2"
+            href="#clients" 
+            className="text-neutral-dark hover:text-deep-blue transition-colors py-2"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Benefits
+            For Clients
           </a>
           <a 
-            href="#providers" 
-            className="text-neutral-dark hover:text-deep-purple transition-colors py-2"
+            href="#services" 
+            className="text-neutral-dark hover:text-deep-blue transition-colors py-2"
             onClick={() => setMobileMenuOpen(false)}
           >
-            For Providers
+            For Services
           </a>
           <a 
             href="#payment-methods" 
-            className="text-neutral-dark hover:text-deep-purple transition-colors py-2"
+            className="text-neutral-dark hover:text-deep-blue transition-colors py-2"
             onClick={() => setMobileMenuOpen(false)}
           >
             Payment Methods
           </a>
-          <button className="bg-gradient-to-r from-deep-blue to-deep-purple text-white font-medium rounded-full px-6 py-2 w-full">
-            Get Early Access
-          </button>
+          <a href="https://app.fewsats.com" className="bg-deep-blue text-white font-medium rounded-full px-6 py-2 w-full" target="_blank" rel="noopener noreferrer">
+            Get Started
+          </a>
         </div>
       )}
     </header>

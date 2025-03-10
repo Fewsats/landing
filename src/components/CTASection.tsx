@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 
@@ -29,13 +28,13 @@ const CTASection: React.FC = () => {
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Background Decoration */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-br from-deep-purple/10 to-deep-blue/5 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-gradient-to-tr from-bright-teal/10 to-deep-purple/5 rounded-full blur-3xl"></div>
+      <div className="absolute -top-24 -right-24 w-96 h-96 bg-deep-blue/5 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-deep-blue/5 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4">
         <div 
           ref={sectionRef}
-          className="section-anim max-w-5xl mx-auto bg-gradient-to-r from-deep-blue to-deep-purple rounded-3xl overflow-hidden shadow-xl"
+          className="section-anim max-w-5xl mx-auto bg-deep-blue rounded-3xl overflow-hidden shadow-xl"
         >
           <div className="grid grid-cols-1 lg:grid-cols-5">
             <div className="lg:col-span-3 p-8 md:p-12">
@@ -46,9 +45,9 @@ const CTASection: React.FC = () => {
                 Join our early access program and be the first to integrate the native payment layer for AI agent interactions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-white text-deep-purple font-medium rounded-full px-8 py-3 shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px]">
-                  Get Early Access
-                </button>
+                <a href="https://app.fewsats.com" className="bg-white text-deep-blue font-medium rounded-full px-8 py-3 shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px]" target="_blank" rel="noopener noreferrer">
+                  Get Started
+                </a>
                 <button className="flex items-center justify-center text-white hover:text-white/80 transition-colors gap-2">
                   Schedule a Demo
                   <ArrowRight size={18} />
@@ -57,7 +56,7 @@ const CTASection: React.FC = () => {
             </div>
             <div className="lg:col-span-2 bg-white/10 backdrop-blur-sm p-8 md:p-12 flex items-center">
               <div className="w-full">
-                <h3 className="text-xl font-semibold text-white mb-4">Early Access Benefits</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">Early Access Features</h3>
                 <ul className="space-y-3 text-white/80">
                   <li className="flex items-start gap-2">
                     <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center shrink-0 mt-0.5">

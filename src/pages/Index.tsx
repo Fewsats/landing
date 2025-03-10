@@ -1,8 +1,7 @@
-
 import React, { useEffect } from 'react';
 import NavBar from '@/components/NavBar';
 import Hero from '@/components/Hero';
-import Benefits from '@/components/Benefits';
+import ClientsServices from '@/components/ClientsServices';
 import PaymentMethods from '@/components/PaymentMethods';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
@@ -29,7 +28,7 @@ const Index: React.FC = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <NavBar />
       <Hero />
-      <Benefits />
+      <ClientsServices />
       <PaymentMethods />
       <CTASection />
       <Footer />

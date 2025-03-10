@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Shield, CreditCard, Settings, Zap, BarChart, Repeat } from 'lucide-react';
 
-const Benefits: React.FC = () => {
+const ClientsServices: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Benefits: React.FC = () => {
     };
   }, []);
 
-  const consumerBenefits = [
+  const clientBenefits = [
     {
       icon: <Zap className="h-6 w-6" />,
       title: "Frictionless AI Transactions",
@@ -43,7 +43,7 @@ const Benefits: React.FC = () => {
     }
   ];
 
-  const providerBenefits = [
+  const serviceBenefits = [
     {
       icon: <CreditCard className="h-6 w-6" />,
       title: "AI-Ready Revenue",
@@ -62,7 +62,7 @@ const Benefits: React.FC = () => {
   ];
 
   return (
-    <section id="benefits" className="py-20 relative">
+    <section id="clients" className="py-20 relative">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-deep-blue/5 to-transparent rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-deep-blue/5 to-transparent rounded-full blur-3xl"></div>
@@ -75,15 +75,15 @@ const Benefits: React.FC = () => {
           </h2>
           <p className="max-w-2xl mx-auto text-neutral-dark/80">
             Our platform bridges the gap between AI capabilities and payment infrastructure,
-            creating new possibilities for both consumers and service providers.
+            creating new possibilities for both clients and services.
           </p>
         </div>
 
-        {/* For Consumers */}
+        {/* For Clients */}
         <div className="mb-20">
           <div className="text-center mb-10">
             <div className="inline-block rounded-full bg-deep-purple/10 px-4 py-1 mb-2">
-              <span className="text-sm font-medium text-deep-purple">For Consumers</span>
+              <span className="text-sm font-medium text-deep-purple">For Clients</span>
             </div>
             <h3 className="text-2xl md:text-3xl font-semibold">
               Let Your AI Agents Handle Payments
@@ -91,7 +91,7 @@ const Benefits: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-animation">
-            {consumerBenefits.map((benefit, index) => (
+            {clientBenefits.map((benefit, index) => (
               <div key={index} className="card-glass">
                 <div className="feature-icon inline-block mb-4">
                   {benefit.icon}
@@ -103,11 +103,11 @@ const Benefits: React.FC = () => {
           </div>
         </div>
 
-        {/* For Providers */}
-        <div id="providers">
+        {/* For Services */}
+        <div id="services">
           <div className="text-center mb-10">
             <div className="inline-block rounded-full bg-bright-teal/10 px-4 py-1 mb-2">
-              <span className="text-sm font-medium text-bright-teal">For Service Providers</span>
+              <span className="text-sm font-medium text-bright-teal">For Services</span>
             </div>
             <h3 className="text-2xl md:text-3xl font-semibold">
               Tap Into The AI Ecosystem
@@ -115,7 +115,7 @@ const Benefits: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-animation">
-            {providerBenefits.map((benefit, index) => (
+            {serviceBenefits.map((benefit, index) => (
               <div key={index} className="card-glass">
                 <div className="feature-icon inline-block mb-4">
                   {benefit.icon}
@@ -131,4 +131,4 @@ const Benefits: React.FC = () => {
   );
 };
 
-export default Benefits;
+export default ClientsServices; 
