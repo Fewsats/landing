@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Shield, CreditCard, Settings, Zap, BarChart, Repeat } from 'lucide-react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const Benefits: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -70,12 +72,11 @@ const Benefits: React.FC = () => {
       <div className="container mx-auto px-4">
         <div ref={sectionRef} className="text-center mb-16 section-anim">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Seamless Payments for the 
-            <span className="text-deep-blue"> AI Economy</span>
+            Payments for a 
+            <span className="text-deep-blue"> safe AI Economy</span>
           </h2>
           <p className="max-w-2xl mx-auto text-neutral-dark/80">
-            Our platform bridges the gap between AI capabilities and payment infrastructure,
-            creating new possibilities for both consumers and service providers.
+            Our platform gives AI the ability to request payments without direct access to financial credentials or payment method details. Control always stays in your hands.
           </p>
         </div>
 
@@ -86,44 +87,186 @@ const Benefits: React.FC = () => {
               <span className="text-sm font-medium text-deep-purple">For Consumers</span>
             </div>
             <h3 className="text-2xl md:text-3xl font-semibold">
-              Let Your AI Agents Handle Payments
+              Add Payment Abilities to Your AI Toolkit
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-animation">
-            {consumerBenefits.map((benefit, index) => (
-              <div key={index} className="card-glass">
-                <div className="feature-icon inline-block mb-4">
-                  {benefit.icon}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left column - Cards */}
+            <div className="space-y-6">
+              {consumerBenefits.map((benefit, index) => (
+                <div 
+                  key={index} 
+                  className="bg-white rounded-xl p-6 shadow-sm border border-neutral-light/50 hover:shadow-md transition-all duration-300 animate-item"
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="bg-deep-purple/10 p-3 rounded-lg">
+                      {benefit.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-lg mb-1">{benefit.title}</h4>
+                      <p className="text-neutral-dark/70">{benefit.description}</p>
+                    </div>
+                  </div>
                 </div>
-                <h4 className="text-xl font-semibold mb-3">{benefit.title}</h4>
-                <p className="text-neutral-dark/80">{benefit.description}</p>
+              ))}
+            </div>
+
+            {/* Right column - Code */}
+            <div className="bg-neutral-dark rounded-xl p-6 shadow-lg animate-item" style={{ animationDelay: '450ms' }}>
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                </div>
+                <div className="text-xs text-neutral-light">consumer-example.js</div>
               </div>
-            ))}
+              <SyntaxHighlighter 
+                language="javascript" 
+                style={vscDarkPlus}
+                customStyle={{ 
+                  background: 'transparent',
+                  padding: '0',
+                  margin: '0',
+                  borderRadius: '0.5rem',
+                  fontSize: '0.875rem'
+                }}
+              >
+{`// Initialize the AI payment client
+const paymentClient = new FewsatsClient({
+  apiKey: process.env.FEWSATS_API_KEY,
+  budgetLimit: 50, // USD per day
+  approvalPolicy: 'auto' // or 'manual'
+});
+
+// AI agent needs to access a premium API
+async function accessPremiumService() {
+  const response = await paymentClient.pay({
+    service: 'premium-data-api',
+    amount: 0.05, // USD
+    description: 'Access to premium data'
+  });
+  
+  if (response.status === 'success') {
+    // Access granted, proceed with API call
+    return fetchPremiumData(response.accessToken);
+  }
+}`}
+              </SyntaxHighlighter>
+            </div>
           </div>
         </div>
 
         {/* For Providers */}
-        <div id="providers">
+        <div>
           <div className="text-center mb-10">
             <div className="inline-block rounded-full bg-bright-teal/10 px-4 py-1 mb-2">
-              <span className="text-sm font-medium text-bright-teal">For Service Providers</span>
+              <span className="text-sm font-medium text-bright-teal">For Providers</span>
             </div>
             <h3 className="text-2xl md:text-3xl font-semibold">
-              Tap Into The AI Ecosystem
+              Unlock a New Revenue Channel
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-animation">
-            {providerBenefits.map((benefit, index) => (
-              <div key={index} className="card-glass">
-                <div className="feature-icon inline-block mb-4">
-                  {benefit.icon}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left column - Cards */}
+            <div className="space-y-6">
+              <div 
+                className="bg-white rounded-xl p-6 shadow-sm border border-neutral-light/50 hover:shadow-md transition-all duration-300 animate-item"
+                style={{ animationDelay: '0ms' }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="bg-bright-teal/10 p-3 rounded-lg">
+                    <BarChart className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-1">Expand Your Market</h4>
+                    <p className="text-neutral-dark/70">Reach users where they are: AI assistants, copilots, and agent networks</p>
+                  </div>
                 </div>
-                <h4 className="text-xl font-semibold mb-3">{benefit.title}</h4>
-                <p className="text-neutral-dark/80">{benefit.description}</p>
               </div>
-            ))}
+              
+              <div 
+                className="bg-white rounded-xl p-6 shadow-sm border border-neutral-light/50 hover:shadow-md transition-all duration-300 animate-item"
+                style={{ animationDelay: '150ms' }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="bg-bright-teal/10 p-3 rounded-lg">
+                    <Repeat className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-1">New Business Models</h4>
+                    <p className="text-neutral-dark/70">Enable micropayments and agent-to-agent transactions with minimal overhead</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div 
+                className="bg-white rounded-xl p-6 shadow-sm border border-neutral-light/50 hover:shadow-md transition-all duration-300 animate-item"
+                style={{ animationDelay: '300ms' }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="bg-bright-teal/10 p-3 rounded-lg">
+                    <CreditCard className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-1">Frictionless Integration</h4>
+                    <p className="text-neutral-dark/70">Simple API implementation with built-in payment processing and user authentication</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right column - Code */}
+            <div className="bg-neutral-dark rounded-xl p-6 shadow-lg animate-item" style={{ animationDelay: '450ms' }}>
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                </div>
+                <div className="text-xs text-neutral-light">provider-example.js</div>
+              </div>
+              <SyntaxHighlighter 
+                language="javascript" 
+                style={vscDarkPlus}
+                customStyle={{ 
+                  background: 'transparent',
+                  padding: '0',
+                  margin: '0',
+                  borderRadius: '0.5rem',
+                  fontSize: '0.875rem'
+                }}
+              >
+{`// Initialize the service provider SDK
+const fewsatsService = new FewsatsService({
+  serviceId: 'your-premium-api',
+  apiKey: process.env.FEWSATS_SERVICE_KEY
+});
+
+// Handle incoming API requests
+app.get('/premium-data', async (req, res) => {
+  // Verify payment token from the request
+  const paymentVerification = 
+    await fewsatsService.verifyPayment(
+      req.headers['x-payment-token']
+    );
+  
+  if (paymentVerification.valid) {
+    // Payment is valid, serve the premium content
+    res.json({ data: getPremiumData() });
+  } else {
+    // Payment required
+    res.status(402).json({
+      error: 'Payment required',
+      paymentUrl: paymentVerification.paymentUrl
+    });
+  }
+});`}
+              </SyntaxHighlighter>
+            </div>
           </div>
         </div>
       </div>

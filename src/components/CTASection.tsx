@@ -41,9 +41,6 @@ const CTASection: React.FC = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                 Ready to empower your AI with payment capabilities?
               </h2>
-              <p className="text-white/80 mb-8 max-w-lg">
-                Join our early access program and be the first to integrate the native payment layer for AI agent interactions.
-              </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="https://app.fewsats.com" className="bg-white text-deep-blue font-medium rounded-full px-8 py-3 shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px]" target="_blank" rel="noopener noreferrer">
                   Get Started
@@ -56,25 +53,25 @@ const CTASection: React.FC = () => {
             </div>
             <div className="lg:col-span-2 bg-white/10 backdrop-blur-sm p-8 md:p-12 flex items-center">
               <div className="w-full">
-                <h3 className="text-xl font-semibold text-white mb-4">Early Access Features</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">Features</h3>
                 <ul className="space-y-3 text-white/80">
                   <li className="flex items-start gap-2">
                     <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center shrink-0 mt-0.5">
                       <span className="text-white text-sm">1</span>
                     </div>
-                    <span>Priority implementation support</span>
+                    <span>Support for MCP payments</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center shrink-0 mt-0.5">
                       <span className="text-white text-sm">2</span>
                     </div>
-                    <span>Influence product roadmap</span>
+                    <span>Policy engine for custom rules</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center shrink-0 mt-0.5">
                       <span className="text-white text-sm">3</span>
                     </div>
-                    <span>Discounted pricing for early adopters</span>
+                    <span>Support for micropayments</span>
                   </li>
                 </ul>
               </div>

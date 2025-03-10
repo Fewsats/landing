@@ -33,10 +33,10 @@ const PaymentMethods: React.FC = () => {
       <div className="container mx-auto px-4">
         <div ref={sectionRef} className="section-anim max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Flexible <span className="text-deep-blue">Payment Methods</span>
+          One Integration, <span className="text-deep-blue">All Payment Methods</span>
           </h2>
           <p className="text-neutral-dark/80 mb-8">
-            Supporting both traditional and next-generation payment systems
+            Support traditional and next-gen payment networks out of the box
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 stagger-animation">
@@ -44,9 +44,9 @@ const PaymentMethods: React.FC = () => {
               <div className="h-16 w-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-deep-blue/10">
                 <Landmark className="h-8 w-8 text-deep-blue" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Bank Transfers / ACH</h3>
+              <h3 className="text-xl font-semibold mb-3">Bank Transfers</h3>
               <p className="text-neutral-dark/80">
-                Connect directly to your bank account for secure, low-fee transfers
+                Low-fee ACH and Wire transfers
               </p>
             </div>
 
@@ -66,19 +66,9 @@ const PaymentMethods: React.FC = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3">Cryptocurrency</h3>
               <p className="text-neutral-dark/80">
-                Support for digital currencies enabling global, borderless transactions
+                Support for stablecoins enabling global, borderless transactions
               </p>
             </div>
-          </div>
-
-          <div className="mt-16 glass p-8 rounded-2xl">
-            <h3 className="text-xl font-semibold mb-4">Integration Flexibility</h3>
-            <p className="text-neutral-dark/80 mb-6">
-              Our infrastructure adapts to your payment preferences, with simple integration and robust security at every step
-            </p>
-            <button className="btn-secondary">
-              Explore Integration Options
-            </button>
           </div>
         </div>
       </div>

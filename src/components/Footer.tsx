@@ -1,12 +1,13 @@
 import React from 'react';
-import { Twitter, Linkedin, Github, Mail } from 'lucide-react';
+import { Linkedin, Github, Mail } from 'lucide-react';
+import { FaXTwitter, FaDiscord } from 'react-icons/fa6';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-white border-t border-gray-100">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-2">
+          <div className="md:col-span-4">
             <div className="font-bold text-2xl text-deep-blue mb-4">
               Fewsats
             </div>
@@ -14,21 +15,25 @@ const Footer: React.FC = () => {
               The native payment layer for AI agents. Enabling seamless transactions between AI systems and services without context switching.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="h-10 w-10 rounded-full bg-neutral-light flex items-center justify-center text-neutral-dark hover:bg-deep-blue hover:text-white transition-colors">
-                <Twitter size={18} />
+              <a href="https://x.com/fewsats" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-neutral-light flex items-center justify-center text-neutral-dark hover:bg-deep-blue hover:text-white transition-colors">
+                <FaXTwitter size={18} />
               </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-neutral-light flex items-center justify-center text-neutral-dark hover:bg-deep-blue hover:text-white transition-colors">
+              <a href="https://discord.gg/2tPYBgWzQm" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-neutral-light flex items-center justify-center text-neutral-dark hover:bg-deep-blue hover:text-white transition-colors">
+                <FaDiscord size={18} />
+              </a>
+              <a href="https://www.linkedin.com/company/fewsats" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-neutral-light flex items-center justify-center text-neutral-dark hover:bg-deep-blue hover:text-white transition-colors">
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-neutral-light flex items-center justify-center text-neutral-dark hover:bg-deep-blue hover:text-white transition-colors">
+              <a href="https://github.com/Fewsats" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-neutral-light flex items-center justify-center text-neutral-dark hover:bg-deep-blue hover:text-white transition-colors">
                 <Github size={18} />
               </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-neutral-light flex items-center justify-center text-neutral-dark hover:bg-deep-blue hover:text-white transition-colors">
+              <a href="mailto:admin@fewsats.com" className="h-10 w-10 rounded-full bg-neutral-light flex items-center justify-center text-neutral-dark hover:bg-deep-blue hover:text-white transition-colors">
                 <Mail size={18} />
               </a>
             </div>
           </div>
 
+          {/* Product section - commented out
           <div>
             <h3 className="font-semibold text-lg mb-4">Product</h3>
             <ul className="space-y-2">
@@ -48,6 +53,7 @@ const Footer: React.FC = () => {
               <li><a href="#" className="text-neutral-dark/70 hover:text-deep-blue transition-colors">Contact</a></li>
             </ul>
           </div>
+          */}
         </div>
 
         <div className="border-t border-gray-100 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
