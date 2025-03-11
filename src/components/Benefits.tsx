@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Shield, CreditCard, Settings, Zap, BarChart, Repeat } from 'lucide-react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import CodeExample from './CodeExample';
 
 const Benefits: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [consumerCode, setConsumerCode] = useState<string>('');
+  const [providerCode, setProviderCode] = useState<string>('');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,6 +26,60 @@ const Benefits: React.FC = () => {
         observer.unobserve(sectionRef.current);
       }
     };
+  }, []);
+
+  // Load code examples with a small delay to ensure proper rendering
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setConsumerCode(`// Initialize the AI payment client
+const paymentClient = new FewsatsClient({
+  apiKey: process.env.FEWSATS_API_KEY,
+  budgetLimit: 50, // USD per day
+  approvalPolicy: 'auto' // or 'manual'
+});
+
+// AI agent needs to access a premium API
+async function accessPremiumService() {
+  const response = await paymentClient.pay({
+    service: 'premium-data-api',
+    amount: 0.05, // USD
+    description: 'Access to premium data'
+  });
+  
+  if (response.status === 'success') {
+    // Access granted, proceed with API call
+    return fetchPremiumData(response.accessToken);
+  }
+}`);
+
+      setProviderCode(`// Initialize the service provider SDK
+const fewsatsService = new FewsatsService({
+  serviceId: 'your-premium-api',
+  apiKey: process.env.FEWSATS_SERVICE_KEY
+});
+
+// Handle incoming API requests
+app.get('/premium-data', async (req, res) => {
+  // Verify payment token from the request
+  const paymentVerification = 
+    await fewsatsService.verifyPayment(
+      req.headers['x-payment-token']
+    );
+  
+  if (paymentVerification.valid) {
+    // Payment is valid, serve the premium content
+    res.json({ data: getPremiumData() });
+  } else {
+    // Payment required
+    res.status(402).json({
+      error: 'Payment required',
+      paymentUrl: paymentVerification.paymentUrl
+    });
+  }
+});`);
+    }, 100); // Small delay to ensure component is mounted
+
+    return () => clearTimeout(timer);
   }, []);
 
   const consumerBenefits = [
@@ -114,48 +169,11 @@ const Benefits: React.FC = () => {
             </div>
 
             {/* Right column - Code */}
-            <div className="bg-neutral-dark rounded-xl p-6 shadow-lg animate-item" style={{ animationDelay: '450ms' }}>
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                </div>
-                <div className="text-xs text-neutral-light">consumer-example.js</div>
-              </div>
-              <SyntaxHighlighter 
-                language="javascript" 
-                style={vscDarkPlus}
-                customStyle={{ 
-                  background: 'transparent',
-                  padding: '0',
-                  margin: '0',
-                  borderRadius: '0.5rem',
-                  fontSize: '0.875rem'
-                }}
-              >
-{`// Initialize the AI payment client
-const paymentClient = new FewsatsClient({
-  apiKey: process.env.FEWSATS_API_KEY,
-  budgetLimit: 50, // USD per day
-  approvalPolicy: 'auto' // or 'manual'
-});
-
-// AI agent needs to access a premium API
-async function accessPremiumService() {
-  const response = await paymentClient.pay({
-    service: 'premium-data-api',
-    amount: 0.05, // USD
-    description: 'Access to premium data'
-  });
-  
-  if (response.status === 'success') {
-    // Access granted, proceed with API call
-    return fetchPremiumData(response.accessToken);
-  }
-}`}
-              </SyntaxHighlighter>
-            </div>
+            <CodeExample 
+              code={consumerCode}
+              language="javascript"
+              filename="consumer-example.js"
+            />
           </div>
         </div>
 
@@ -220,53 +238,11 @@ async function accessPremiumService() {
             </div>
 
             {/* Right column - Code */}
-            <div className="bg-neutral-dark rounded-xl p-6 shadow-lg animate-item" style={{ animationDelay: '450ms' }}>
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                </div>
-                <div className="text-xs text-neutral-light">provider-example.js</div>
-              </div>
-              <SyntaxHighlighter 
-                language="javascript" 
-                style={vscDarkPlus}
-                customStyle={{ 
-                  background: 'transparent',
-                  padding: '0',
-                  margin: '0',
-                  borderRadius: '0.5rem',
-                  fontSize: '0.875rem'
-                }}
-              >
-{`// Initialize the service provider SDK
-const fewsatsService = new FewsatsService({
-  serviceId: 'your-premium-api',
-  apiKey: process.env.FEWSATS_SERVICE_KEY
-});
-
-// Handle incoming API requests
-app.get('/premium-data', async (req, res) => {
-  // Verify payment token from the request
-  const paymentVerification = 
-    await fewsatsService.verifyPayment(
-      req.headers['x-payment-token']
-    );
-  
-  if (paymentVerification.valid) {
-    // Payment is valid, serve the premium content
-    res.json({ data: getPremiumData() });
-  } else {
-    // Payment required
-    res.status(402).json({
-      error: 'Payment required',
-      paymentUrl: paymentVerification.paymentUrl
-    });
-  }
-});`}
-              </SyntaxHighlighter>
-            </div>
+            <CodeExample 
+              code={providerCode}
+              language="javascript"
+              filename="provider-example.js"
+            />
           </div>
         </div>
       </div>

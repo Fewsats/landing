@@ -55,62 +55,62 @@ const Hero: React.FC = () => {
     
     // Step 0: AI agent requests access
     messages.push(
-      <React.Fragment key="0">
+      <span key="0">
         <span className="font-semibold text-purple-600">ai agent</span>: Requesting access to premium API...
-      </React.Fragment>
+      </span>
     );
     
     // Step 1: Service requires payment
     if (animationStep >= 1) {
       messages.push(
-        <React.Fragment key="1">
+        <span key="1">
           <br />
           <span className="font-semibold">service</span>: <span className="text-red-500">Error: Payment required to proceed.</span>
-        </React.Fragment>
+        </span>
       );
     }
     
     // Step 2: AI agent initiates payment
     if (animationStep >= 2) {
       messages.push(
-        <React.Fragment key="2">
+        <span key="2">
           <br />
           <span className="font-semibold text-purple-600">ai agent</span>: Initiating payment via Fewsats...
-        </React.Fragment>
+        </span>
       );
     }
     
     // Step 3: Fewsats runs policy checks
     if (animationStep >= 3) {
       messages.push(
-        <React.Fragment key="3">
+        <span key="3">
           <br />
           <span className="font-semibold text-deep-blue">fewsats</span>: Running policy checks... Budget <span className="text-green-500">✓</span> Approval <span className="text-green-500">✓</span>
-        </React.Fragment>
+        </span>
       );
     }
     
     // Step 4: Fewsats processes payment
     if (animationStep >= 4) {
       messages.push(
-        <React.Fragment key="4">
+        <span key="4">
           <br />
           <span className="font-semibold text-deep-blue">fewsats</span>: <span className="text-green-500">All policies passed!</span> Payment sent to service.
-        </React.Fragment>
+        </span>
       );
     }
     
     // Step 5: Service grants access
     if (animationStep >= 5) {
       messages.push(
-        <React.Fragment key="5">
+        <span key="5">
           <br />
-          <span className="font-semibold">service</span>: Payment received. <span className="text-green-500">Access granted.</span>
-        </React.Fragment>
+          <span className="font-semibold">service</span>: <span className="text-green-500">Access granted!</span> Returning premium data.
+        </span>
       );
     }
     
-    return <>{messages}</>;
+    return <span>{messages}</span>;
   };
 
   return (

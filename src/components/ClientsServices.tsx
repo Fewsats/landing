@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Shield, CreditCard, Settings, Zap, BarChart, Repeat } from 'lucide-react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import CodeExample from './CodeExample';
 
 const ClientsServices: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [aiAgentCode, setAiAgentCode] = useState<string>('');
+  const [serverCode, setServerCode] = useState<string>('');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,6 +26,51 @@ const ClientsServices: React.FC = () => {
         observer.unobserve(sectionRef.current);
       }
     };
+  }, []);
+
+  // Load code examples with a small delay to ensure proper rendering
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAiAgentCode(`import { Fewsats } from 'fewsats';
+
+// Configure the SDK
+const client = new Fewsats({
+  apiKey: process.env.FEWSATS_API_KEY,
+});
+
+// Make HTTP request to external service
+const response = await fetch('https://some-api.com/endpoint');
+
+// Handle HTTP 402 payment required error
+if (response.status === 402) {
+  // The response contains information about available offers
+  const data = await response.json();
+  const offerId = data.offers[0].id; // Take first offer
+  const resp = await client.payOffer(offerId, data);
+  // resp.status == 'needs_review'
+}`);
+
+      setServerCode(`// Express route handler
+app.get('/paywalled-resource', async (req, res) => {
+  if (needsToPay(req.userId)) {
+    const offers = [
+      {
+        offerId: 'offer_123',
+        amount: 1, // USD Cents
+        currency: 'USD',
+        description: 'Test payment',
+        title: 'One Cent Offer',
+      }
+    ];
+    
+    const response = await client.createOffers(offers);
+    return res.status(402).json(response);
+  }
+  // Handle normal response
+});`);
+    }, 100); // Small delay to ensure component is mounted
+
+    return () => clearTimeout(timer);
   }, []);
 
   const clientBenefits = [
@@ -114,46 +160,11 @@ const ClientsServices: React.FC = () => {
             </div>
 
             {/* Right column - Code */}
-            <div className="bg-neutral-dark rounded-xl p-6 shadow-lg animate-item" style={{ animationDelay: '450ms' }}>
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                </div>
-                <div className="text-xs text-neutral-light">ai-agent-example.ts</div>
-              </div>
-              <SyntaxHighlighter 
-                language="typescript" 
-                style={vscDarkPlus}
-                customStyle={{ 
-                  background: 'transparent',
-                  padding: '0',
-                  margin: '0',
-                  borderRadius: '0.5rem',
-                  fontSize: '0.875rem'
-                }}
-              >
-{`import { Fewsats } from 'fewsats';
-
-// Configure the SDK
-const client = new Fewsats({
-  apiKey: process.env.FEWSATS_API_KEY,
-});
-
-// Make HTTP request to external service
-const response = await fetch('https://some-api.com/endpoint');
-
-// Handle HTTP 402 payment required error
-if (response.status === 402) {
-  // The response contains information about available offers
-  const data = await response.json();
-  const offerId = data.offers[0].id; // Take first offer
-  const resp = await client.payOffer(offerId, data);
-  // resp.status == 'needs_review'
-}`}
-              </SyntaxHighlighter>
-            </div>
+            <CodeExample 
+              code={aiAgentCode}
+              language="typescript"
+              filename="ai-agent-example.ts"
+            />
           </div>
         </div>
 
@@ -218,46 +229,11 @@ if (response.status === 402) {
             </div>
 
             {/* Right column - Code */}
-            <div className="bg-neutral-dark rounded-xl p-6 shadow-lg animate-item" style={{ animationDelay: '450ms' }}>
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                </div>
-                <div className="text-xs text-neutral-light">server-example.ts</div>
-              </div>
-              <SyntaxHighlighter 
-                language="typescript" 
-                style={vscDarkPlus}
-                customStyle={{ 
-                  background: 'transparent',
-                  padding: '0',
-                  margin: '0',
-                  borderRadius: '0.5rem',
-                  fontSize: '0.875rem'
-                }}
-              >
-{`// Express route handler
-app.get('/paywalled-resource', async (req, res) => {
-  if (needsToPay(req.userId)) {
-    const offers = [
-      {
-        offerId: 'offer_123',
-        amount: 1, // USD Cents
-        currency: 'USD',
-        description: 'Test payment',
-        title: 'One Cent Offer',
-      }
-    ];
-    
-    const response = await client.createOffers(offers);
-    return res.status(402).json(response);
-  }
-  // Handle normal response
-});`}
-              </SyntaxHighlighter>
-            </div>
+            <CodeExample 
+              code={serverCode}
+              language="typescript"
+              filename="server-example.ts"
+            />
           </div>
         </div>
       </div>
