@@ -169,7 +169,7 @@ app.get('/paywalled-resource', async (req, res) => {
         </div>
 
         {/* For Services */}
-        <div>
+        <div id="services">
           <div className="text-center mb-10">
             <div className="inline-block rounded-full bg-bright-teal/10 px-4 py-1 mb-2">
               <span className="text-sm font-medium text-bright-teal">For Services</span>

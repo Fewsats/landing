@@ -45,10 +45,10 @@ const CTASection: React.FC = () => {
                 <a href="https://app.fewsats.com" className="bg-white text-deep-blue font-medium rounded-full px-8 py-3 shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px]" target="_blank" rel="noopener noreferrer">
                   Get Started
                 </a>
-                <button className="flex items-center justify-center text-white hover:text-white/80 transition-colors gap-2">
+                {/* <button className="flex items-center justify-center text-white hover:text-white/80 transition-colors gap-2">
                   Schedule a Demo
                   <ArrowRight size={18} />
-                </button>
+                </button> */}
               </div>
             </div>
             <div className="lg:col-span-2 bg-white/10 backdrop-blur-sm p-8 md:p-12 flex items-center">
