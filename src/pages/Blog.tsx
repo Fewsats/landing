@@ -45,7 +45,7 @@ const Blog: React.FC = () => {
               className="block md:flex border border-gray-200 rounded-lg hover:border-deep-blue/50 transition-colors duration-200 overflow-hidden">
               <div className="flex-shrink-0">
                 <img 
-                  src="/logo.jpg" 
+                  src="https://icons-8e9.pages.dev/agents-at-work-logo.jpg" 
                   alt="Agents at Work Podcast" 
                   className="object-cover"
                   style={{ width: '340px', height: '340px' }}
