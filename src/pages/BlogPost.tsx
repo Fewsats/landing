@@ -17,8 +17,8 @@ const BlogPost: React.FC = () => {
   
   // Sample blog post data - in a real app, you'd fetch this based on the slug
   const blogPosts: Record<string, BlogPost> = {
-    'ai-payment-infrastructure': {
-      title: 'Why AI Tools Need Payment Access',
+    'why-ai-agents-need-access-to-payments': {
+      title: 'Why AI Agents Need Access to Payments',
       date: 'March 25, 2024',
       description: 'Explore why payment infrastructure is the missing piece that will unlock agentic innovation and enable AI agents to participate in the market economy.',
       content: `
@@ -107,36 +107,6 @@ const BlogPost: React.FC = () => {
         
         <p class="mb-4">Payment infrastructure for AI agents is more than a technical challenge—it's a gateway to new forms of economic organization and value creation. By solving these infrastructure barriers, we can unlock the full potential of AI agents in the market economy.</p>
       `
-    },
-    'agentic-payments': {
-      title: 'What Are Agentic Payments?',
-      date: 'March 15, 2024',
-      description: 'Learn about agentic payments - the technology enabling AI systems to make purchases, access paid services, and manage financial transactions on behalf of users.',
-      content: `
-        <p class="mb-4">Agentic payments represent a paradigm shift in how AI systems interact with the economic world. With proper payment infrastructure, AI agents can now make purchases, access paid services, and manage financial transactions on behalf of their users.</p>
-        
-        <p class="mb-4">This capability transforms AI assistants from passive tools to active participants in the digital economy, unlocking entirely new use cases and business models.</p>
-        
-        <h2 class="text-2xl font-bold mt-8 mb-4">Key Components of Agentic Payments</h2>
-        
-        <p class="mb-4">A robust agentic payment system requires several critical components:</p>
-        
-        <ul class="list-disc pl-6 mb-4">
-          <li class="mb-2"><strong>Authentication & Authorization</strong> - Ensuring the agent has permission to make specific purchases</li>
-          <li class="mb-2"><strong>Budget Controls</strong> - Setting clear limits on spending authority</li>
-          <li class="mb-2"><strong>Policy Enforcement</strong> - Implementing rules about what can be purchased</li>
-          <li class="mb-2"><strong>Audit Trail</strong> - Maintaining transparent records of all transactions</li>
-          <li class="mb-2"><strong>Integration Capabilities</strong> - Connecting seamlessly with existing payment systems</li>
-        </ul>
-        
-        <h2 class="text-2xl font-bold mt-8 mb-4">Real-World Applications</h2>
-        
-        <p class="mb-4">The applications for agentic payments are vast and growing:</p>
-        
-        <p class="mb-4">AI research assistants can purchase access to academic papers and specialized databases. Creative AI tools can license stock images, music, or other assets. Enterprise AI systems can procure services from external vendors without human intervention in the payment flow.</p>
-        
-        <p class="mb-4">As this technology matures, we'll see entirely new business models emerge that weren't previously possible.</p>
-      `
     }
   };
   
@@ -149,8 +119,8 @@ const BlogPost: React.FC = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>{post.title} | Fewsats AI Payment Infrastructure</title>
-        <meta name="description" content={post.description || `${post.title} - Learn about AI payment infrastructure and agentic payments from Fewsats.`} />
+        <title>{post.title} | Fewsats Blog on Secure Payments for AI Agents</title>
+        <meta name="description" content={post.description || `${post.title} - Enable your AI agents to securely pay for services with built-in oversight and budget controls. Fewsats provides payment infrastructure for the agentic economy.`} />
         <link rel="canonical" href={`https://www.fewsats.com/blog/${slug}`} />
       </Helmet>
       

@@ -7,8 +7,8 @@ const Blog: React.FC = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>AI Payment Infrastructure Blog | Fewsats</title>
-        <meta name="description" content="Articles about payments for AI agents, autonomous economic participation, and the infrastructure needed for agentic payments." />
+        <title>Fewsats Blog | Secure Payments for AI Agents</title>
+        <meta name="description" content="Enable your AI agents to securely pay for services with built-in oversight, budget controls, and zero friction. Fewsats provides the payment infrastructure for the agentic economy." />
         <link rel="canonical" href="https://www.fewsats.com/blog" />
       </Helmet>
       

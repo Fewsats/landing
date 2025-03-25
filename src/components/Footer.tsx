@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
               <a href="https://x.com/fewsats" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-neutral-light flex items-center justify-center text-neutral-dark hover:bg-deep-blue hover:text-white transition-colors">
                 <FaXTwitter size={18} />
               </a>
-              <a href="https://discord.gg/2tPYBgWzQm" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-neutral-light flex items-center justify-center text-neutral-dark hover:bg-deep-blue hover:text-white transition-colors">
+              <a href="https://discord.com/invite/2tPYBgWzQm" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-neutral-light flex items-center justify-center text-neutral-dark hover:bg-deep-blue hover:text-white transition-colors">
                 <FaDiscord size={18} />
               </a>
               <a href="https://www.linkedin.com/company/fewsats" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-neutral-light flex items-center justify-center text-neutral-dark hover:bg-deep-blue hover:text-white transition-colors">
