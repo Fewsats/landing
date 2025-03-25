@@ -55,35 +55,35 @@ const Footer: React.FC = () => {
           </div>
           */}
           
-          <div className="md:col-span-2">
+          {/* <div className="md:col-span-2">
             <h3 className="font-semibold text-lg mb-4">AI Agent Economy Resources</h3>
             <ul className="space-y-2">
               <li className="flex items-center">
                 <ExternalLink size={14} className="mr-2 text-deep-blue" />
-                <a href="https://a16z.com/the-engineering-challenges-of-building-ai-agents/" target="_blank" rel="noopener noreferrer" className="text-neutral-dark/70 hover:text-deep-blue transition-colors">
-                  The Engineering Challenges of Building AI Agents (a16z)
+                <a href="https://a16z.com/ai-copilot-ai-agent-white-collar-roles" target="_blank" rel="noopener noreferrer" className="text-neutral-dark/70 hover:text-deep-blue transition-colors">
+                  AI Copilots & Agents in White-Collar Roles (a16z)
                 </a>
               </li>
               <li className="flex items-center">
                 <ExternalLink size={14} className="mr-2 text-deep-blue" />
-                <a href="https://www.anthropic.com/news/claude-3-5-sonnet" target="_blank" rel="noopener noreferrer" className="text-neutral-dark/70 hover:text-deep-blue transition-colors">
-                  Claude 3.5 Sonnet Release (Anthropic)
+                <a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener noreferrer" className="text-neutral-dark/70 hover:text-deep-blue transition-colors">
+                  Building Effective Agents (Anthropic)
                 </a>
               </li>
               <li className="flex items-center">
                 <ExternalLink size={14} className="mr-2 text-deep-blue" />
-                <a href="https://openai.com/research/gpts-are-gpts" target="_blank" rel="noopener noreferrer" className="text-neutral-dark/70 hover:text-deep-blue transition-colors">
-                  GPTs are GPTs: Research on Agentic AI (OpenAI)
+                <a href="https://cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf" target="_blank" rel="noopener noreferrer" className="text-neutral-dark/70 hover:text-deep-blue transition-colors">
+                  Practices for Governing Agentic AI Systems (OpenAI)
                 </a>
               </li>
               <li className="flex items-center">
                 <ExternalLink size={14} className="mr-2 text-deep-blue" />
-                <a href="https://www.googlecloudpresscorner.com/2024-04-09-Google-launches-AI-Agents-on-Google-Cloud" target="_blank" rel="noopener noreferrer" className="text-neutral-dark/70 hover:text-deep-blue transition-colors">
-                  Google Cloud AI Agents (Google)
+                <a href="https://cloud.google.com/discover/what-are-ai-agents" target="_blank" rel="noopener noreferrer" className="text-neutral-dark/70 hover:text-deep-blue transition-colors">
+                  What Are AI Agents? (Google Cloud)
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-gray-100 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
