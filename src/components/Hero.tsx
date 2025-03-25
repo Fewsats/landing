@@ -129,7 +129,7 @@ const Hero: React.FC = () => {
                 <span className="text-sm font-medium text-deep-blue">The easiest way to integrate payments in MCP</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-center md:text-left">
-                The Payment Infrastructure for 
+                Payments for 
                 <span className="block text-deep-blue">
                   AI Agents
                 </span>
@@ -137,8 +137,11 @@ const Hero: React.FC = () => {
               <p className="text-lg text-neutral-dark/80 mb-4 text-center md:text-left">
                 Enable AI transactions with human oversight, budget controls, and zero friction.
               </p>
-              <p className="text-lg text-neutral-dark/80 mb-8 text-center md:text-left">
+              <p className="text-lg text-neutral-dark/80 mb-4 text-center md:text-left">
                 No browser, no context switching, no headaches, it just works.
+              </p>
+              <p className="text-lg text-neutral-dark/80 mb-8 text-center md:text-left">
+                Fewsats unlocks agentic innovation in the market economy by providing secure, reliable payment infrastructure designed specifically for AI agents.
               </p>
               <div className="self-center md:self-start">
                 <a href="https://app.fewsats.com" className="btn-primary" target="_blank" rel="noopener noreferrer">
