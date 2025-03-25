@@ -30,6 +30,21 @@ const Index: React.FC = () => {
       <Helmet>
         <title>Fewsats | Secure Payments for AI Agents</title>
         <meta name="description" content="Enable your AI agents to securely pay for services with built-in oversight, budget controls, and zero friction. Fewsats provides the payment infrastructure for the agentic economy." />
+        
+        {/* Facebook Meta Tags */}
+        <meta property="og:url" content="https://www.fewsats.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Fewsats - Payments for AI Agents" />
+        <meta property="og:description" content="Enable your AI agents to securely pay for services with built-in oversight, budget controls, and zero friction. Fewsats provides the payment infrastructure for the agentic economy." />
+        <meta property="og:image" content="https://www.fewsats.com/og-image.png" />
+        
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="fewsats.com" />
+        <meta property="twitter:url" content="https://www.fewsats.com" />
+        <meta name="twitter:title" content="Fewsats - Payments for AI Agents" />
+        <meta name="twitter:description" content="Enable your AI agents to securely pay for services with built-in oversight, budget controls, and zero friction. Fewsats provides the payment infrastructure for the agentic economy." />
+        <meta name="twitter:image" content="https://www.fewsats.com/og-image.png" />
       </Helmet>
       <NavBar />
       <Hero />

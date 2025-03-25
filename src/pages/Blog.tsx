@@ -9,13 +9,29 @@ const Blog: React.FC = () => {
       <Helmet>
         <title>Fewsats Blog | Secure Payments for AI Agents</title>
         <meta name="description" content="Enable your AI agents to securely pay for services with built-in oversight, budget controls, and zero friction. Fewsats provides the payment infrastructure for the agentic economy." />
+        
+        {/* Facebook Meta Tags */}
+        <meta property="og:url" content="https://www.fewsats.com/blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Fewsats Blog | Secure Payments for AI Agents" />
+        <meta property="og:description" content="Enable your AI agents to securely pay for services with built-in oversight, budget controls, and zero friction. Fewsats provides the payment infrastructure for the agentic economy." />
+        <meta property="og:image" content="https://www.fewsats.com/og-image.png" />
+        
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="fewsats.com" />
+        <meta property="twitter:url" content="https://www.fewsats.com/blog" />
+        <meta name="twitter:title" content="Fewsats Blog | Secure Payments for AI Agents" />
+        <meta name="twitter:description" content="Enable your AI agents to securely pay for services with built-in oversight, budget controls, and zero friction. Fewsats provides the payment infrastructure for the agentic economy." />
+        <meta name="twitter:image" content="https://www.fewsats.com/og-image.png" />
       </Helmet>
       
       <NavBar />
       
       <div className="container mx-auto px-4 py-8 md:py-16">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold mb-8">Articles</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">Articles</h1>
+          <div className="h-1 w-24 bg-deep-blue/20 mb-8"></div>
           
           {/* Article */}
           <div className="mb-16">

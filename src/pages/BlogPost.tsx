@@ -121,6 +121,21 @@ const BlogPost: React.FC = () => {
       <Helmet>
         <title>{post.title} | Fewsats Blog on Secure Payments for AI Agents</title>
         <meta name="description" content={post.description || `${post.title} - Enable your AI agents to securely pay for services with built-in oversight and budget controls. Fewsats provides payment infrastructure for the agentic economy.`} />
+        
+        {/* Facebook Meta Tags */}
+        <meta property="og:url" content='https://www.fewsats.com/blog/why-ai-agents-need-access-to-payments' />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={`${post.title} | Fewsats Blog`} />
+        <meta property="og:description" content={post.description || `${post.title} - Enable your AI agents to securely pay for services with built-in oversight and budget controls. Fewsats provides payment infrastructure for the agentic economy.`} />
+        <meta property="og:image" content="https://www.fewsats.com/og-image.png" />
+        
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="fewsats.com" />
+        <meta property="twitter:url" content='https://www.fewsats.com/blog/why-ai-agents-need-access-to-payments' />
+        <meta name="twitter:title" content={`${post.title} | Fewsats Blog`} />
+        <meta name="twitter:description" content={post.description || `${post.title} - Enable your AI agents to securely pay for services with built-in oversight and budget controls. Fewsats provides payment infrastructure for the agentic economy.`} />
+        <meta name="twitter:image" content="https://www.fewsats.com/og-image.png" />
       </Helmet>
       
       <NavBar />
