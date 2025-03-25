@@ -50,9 +50,9 @@ const NavBar: React.FC = () => {
               </a>
             </>
           )}
-          {/* <a href="/blog" className="text-neutral-dark hover:text-deep-blue transition-colors">
+          <a href="/blog" className="text-neutral-dark hover:text-deep-blue transition-colors">
             Blog
-          </a> */}
+          </a>
           <a href="https://app.fewsats.com" className="bg-deep-blue text-white font-medium rounded-full px-6 py-2 hover:shadow-lg transition-all duration-300" target="_blank" rel="noopener noreferrer">
             Get Started
           </a>
@@ -95,13 +95,13 @@ const NavBar: React.FC = () => {
               </a>
             </>
           )}
-          {/* <a 
+          <a 
             href="/blog" 
             className="text-neutral-dark hover:text-deep-blue transition-colors py-2"
             onClick={() => setMobileMenuOpen(false)}
           >
             Blog
-          </a> */}
+          </a>
           <a href="https://app.fewsats.com" className="bg-deep-blue text-white font-medium rounded-full px-6 py-2 w-full" target="_blank" rel="noopener noreferrer">
             Get Started
           </a>

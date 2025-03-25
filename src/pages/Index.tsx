@@ -6,6 +6,7 @@ import PaymentMethods from '@/components/PaymentMethods';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import IntersectionObserver from '@/components/IntersectionObserver';
+import { Helmet } from 'react-helmet';
 
 const Index: React.FC = () => {
   useEffect(() => {
@@ -26,6 +27,10 @@ const Index: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Helmet>
+        <title>Fewsats | Secure Payments for AI Agents</title>
+        <meta name="description" content="Enable your AI agents to securely pay for services with built-in oversight, budget controls, and zero friction. Fewsats provides the payment infrastructure for the agentic economy." />
+      </Helmet>
       <NavBar />
       <Hero />
       <ClientsServices />

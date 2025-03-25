@@ -121,7 +121,6 @@ const BlogPost: React.FC = () => {
       <Helmet>
         <title>{post.title} | Fewsats Blog on Secure Payments for AI Agents</title>
         <meta name="description" content={post.description || `${post.title} - Enable your AI agents to securely pay for services with built-in oversight and budget controls. Fewsats provides payment infrastructure for the agentic economy.`} />
-        <link rel="canonical" href={`https://www.fewsats.com/blog/${slug}`} />
       </Helmet>
       
       <NavBar />

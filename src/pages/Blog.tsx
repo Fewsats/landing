@@ -9,7 +9,6 @@ const Blog: React.FC = () => {
       <Helmet>
         <title>Fewsats Blog | Secure Payments for AI Agents</title>
         <meta name="description" content="Enable your AI agents to securely pay for services with built-in oversight, budget controls, and zero friction. Fewsats provides the payment infrastructure for the agentic economy." />
-        <link rel="canonical" href="https://www.fewsats.com/blog" />
       </Helmet>
       
       <NavBar />
@@ -20,7 +19,7 @@ const Blog: React.FC = () => {
           
           {/* Article */}
           <div className="mb-16">
-            <a href="/blog/ai-payment-infrastructure" className="group">
+            <a href="/blog/why-ai-agents-need-access-to-payments" className="group">
               <h2 className="text-2xl md:text-3xl font-bold group-hover:text-deep-blue transition-colors duration-200 mb-2">
                 Why AI Tools Need Payment Access
               </h2>
@@ -45,7 +44,7 @@ const Blog: React.FC = () => {
               className="block md:flex border border-gray-200 rounded-lg hover:border-deep-blue/50 transition-colors duration-200 overflow-hidden">
               <div className="flex-shrink-0">
                 <img 
-                  src="https://icons-8e9.pages.dev/agents-at-work-logo.jpg" 
+                  src="https://icons-8e9.pages.dev/agents-at-work-small.jpg" 
                   alt="Agents at Work Podcast" 
                   className="object-cover"
                   style={{ width: '340px', height: '340px' }}
@@ -75,14 +74,14 @@ const Blog: React.FC = () => {
           <div className="border-t pt-12">
             <h2 className="text-2xl font-bold mb-8">Essential Reading on AI Payments</h2>
             <div className="space-y-3">
-              <a href="https://a16z.com/ai-copilots-agents-in-white-collar-roles/" target="_blank" rel="noopener noreferrer" className="flex items-center text-neutral-dark hover:text-deep-blue transition-colors duration-200 border-b border-gray-100 pb-3">
+              <a href="https://a16z.com/ai-copilot-ai-agent-white-collar-roles" target="_blank" rel="noopener noreferrer" className="flex items-center text-neutral-dark hover:text-deep-blue transition-colors duration-200 border-b border-gray-100 pb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-deep-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
                 <span>AI Copilots & Agents in White-Collar Roles</span>
                 <span className="ml-auto text-sm text-neutral-dark/60">a16z</span>
               </a>
-              <a href="https://www.anthropic.com/blog/building-effective-agents" target="_blank" rel="noopener noreferrer" className="flex items-center text-neutral-dark hover:text-deep-blue transition-colors duration-200 border-b border-gray-100 pb-3">
+              <a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener noreferrer" className="flex items-center text-neutral-dark hover:text-deep-blue transition-colors duration-200 border-b border-gray-100 pb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-deep-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
