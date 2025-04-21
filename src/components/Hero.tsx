@@ -144,7 +144,7 @@ const Hero: React.FC = () => {
                 Fewsats unlocks agentic innovation in the market economy by providing secure, reliable payment infrastructure designed specifically for AI agents.
               </p>
               <div className="self-center md:self-start">
-                <a href="https://app.fewsats.com" className="btn-primary" target="_blank" rel="noopener noreferrer">
+                <a href="https://app.fewsats.com" className="bg-deep-blue text-white font-medium rounded-full px-6 py-2 hover:shadow-lg transition-all duration-300" target="_blank" rel="noopener noreferrer">
                   Get Started
                 </a>
               </div>
