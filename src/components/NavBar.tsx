@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Star } from 'lucide-react';
+import { FaXTwitter, FaDiscord, FaGithub, FaCode } from 'react-icons/fa6';
 import { useLocation } from 'react-router-dom';
 
 const NavBar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [starCount, setStarCount] = useState<string>('');
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
@@ -18,6 +20,24 @@ const NavBar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Fetch star count from GitHub
+    const fetchStars = async () => {
+      try {
+        const response = await fetch('https://api.github.com/repos/l402-protocol/l402');
+        const data = await response.json();
+        if (data.stargazers_count) {
+          // Format the number with commas
+          setStarCount(data.stargazers_count.toLocaleString());
+        }
+      } catch (error) {
+        console.error('Error fetching GitHub stars:', error);
+      }
+    };
+
+    fetchStars();
+  }, []);
+
   return (
     <header
       className={cn(
@@ -25,8 +45,9 @@ const NavBar: React.FC = () => {
         isScrolled ? 'bg-white/80 backdrop-blur-lg shadow-sm' : 'bg-transparent'
       )}
     >
-      <div className="container mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-2">
+      <div className="container mx-auto flex items-center">
+        {/* Logo */}
+        <div className="flex items-center gap-2 mr-8">
           <a href="/" className="flex items-center gap-2">
             <img src="/favicon.svg" alt="Fewsats Logo" width={32} height={32} className="text-deep-blue" />
             <span className="font-bold text-2xl text-neutral-dark">
@@ -35,8 +56,50 @@ const NavBar: React.FC = () => {
           </a>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        {/* Social Media Links */}
+        <div className="hidden md:flex items-center space-x-4 ml-auto mr-8">
+          <a 
+            href="https://github.com/Fewsats/fewsats-python" 
+            className="text-neutral-dark hover:text-deep-blue transition-colors"
+            aria-label="Fewsats Documentation"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaCode size={18} />
+          </a>
+          <a 
+            href="https://discord.com/invite/2tPYBgWzQm" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-neutral-dark hover:text-deep-blue transition-colors"
+            aria-label="Fewsats Discord"
+          >
+            <FaDiscord size={18} />
+          </a>
+          <a 
+            href="https://twitter.com/fewsats" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-neutral-dark hover:text-deep-blue transition-colors"
+            aria-label="Fewsats Twitter"
+          >
+            <FaXTwitter size={18} />
+          </a>
+          <a 
+            href="https://github.com/l402-protocol/l402" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 px-2 py-1 rounded-md border border-transparent hover:border-neutral-200 hover:bg-neutral-50 text-neutral-dark hover:text-deep-blue transition-all"
+            aria-label="L402 Protocol GitHub"
+          >
+            <FaGithub size={18} />
+            <span className="font-medium">{starCount}</span>
+            <Star size={14} className="fill-yellow-400 text-yellow-400" />
+          </a>
+        </div>
+
+        {/* Main Navigation */}
+        <div className="hidden md:flex items-center space-x-6">
           {isHomePage && (
             <>
               <a href="#clients" className="text-neutral-dark hover:text-deep-blue transition-colors">
@@ -56,11 +119,11 @@ const NavBar: React.FC = () => {
           <a href="https://app.fewsats.com" className="bg-deep-blue text-white font-medium rounded-full px-6 py-2 hover:shadow-lg transition-all duration-300" target="_blank" rel="noopener noreferrer">
             Get Started
           </a>
-        </nav>
+        </div>
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-neutral-dark" 
+          className="md:hidden ml-auto text-neutral-dark" 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -70,6 +133,48 @@ const NavBar: React.FC = () => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 px-6 flex flex-col space-y-4 animate-fade-in">
+          {/* Social Media for Mobile */}
+          <div className="flex items-center space-x-4 py-2">
+            <a 
+              href="https://github.com/Fewsats/fewsats-python" 
+              className="text-neutral-dark hover:text-deep-blue transition-colors"
+              aria-label="Fewsats Documentation"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaCode size={18} />
+            </a>
+            <a 
+              href="https://discord.com/invite/2tPYBgWzQm" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-neutral-dark hover:text-deep-blue transition-colors"
+              aria-label="Fewsats Discord"
+            >
+              <FaDiscord size={18} />
+            </a>
+            <a 
+              href="https://twitter.com/fewsats" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-neutral-dark hover:text-deep-blue transition-colors"
+              aria-label="Fewsats Twitter"
+            >
+              <FaXTwitter size={18} />
+            </a>
+            <a 
+              href="https://github.com/l402-protocol/l402" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 px-2 py-1 rounded-md border border-transparent hover:border-neutral-200 hover:bg-neutral-50 text-neutral-dark hover:text-deep-blue transition-all"
+              aria-label="L402 Protocol GitHub"
+            >
+              <FaGithub size={18} />
+              <span className="font-medium">{starCount}</span>
+              <Star size={14} className="fill-yellow-400 text-yellow-400" />
+            </a>
+          </div>
+          
           {isHomePage && (
             <>
               <a 
