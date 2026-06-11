@@ -10,6 +10,7 @@ const NavBar: React.FC = () => {
   const [starCount, setStarCount] = useState<string>('');
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const showAcquisitionBanner = isHomePage;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,12 +41,36 @@ const NavBar: React.FC = () => {
 
   return (
     <header
-      className={cn(
-        'fixed top-0 w-full z-50 transition-all duration-300 px-4 py-4 md:px-8',
-        isScrolled ? 'bg-white/80 backdrop-blur-lg shadow-sm' : 'bg-transparent'
-      )}
+      className="fixed top-0 w-full z-50 transition-all duration-300"
     >
-      <div className="container mx-auto flex items-center">
+      {showAcquisitionBanner && (
+        <a
+          href="https://sapiom.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block border-b border-[#a7edc0]/30 bg-[#010c0b] text-white transition-colors hover:bg-[#012724]"
+        >
+          <div className="container mx-auto flex flex-col items-center justify-center gap-2 px-4 py-2 text-center text-xs sm:flex-row sm:text-sm md:px-8">
+            <span className="rounded-full border border-[#a7edc0]/40 bg-[#012724] px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide text-[#a7edc0]">
+              Announcement
+            </span>
+            <span className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+              <span>Fewsats has joined</span>
+              <img src="/sapiom-logo.svg" alt="Sapiom" width={87} height={18} className="h-4 w-auto" />
+              <span>to continue building better payment experiences for AI.</span>
+            </span>
+            <span className="font-medium text-[#a7edc0]">Learn more</span>
+          </div>
+        </a>
+      )}
+
+      <div
+        className={cn(
+          'transition-all duration-300 px-4 py-4 md:px-8',
+          isScrolled ? 'bg-white/80 backdrop-blur-lg shadow-sm' : 'bg-transparent'
+        )}
+      >
+        <div className="container mx-auto flex items-center">
         {/* Logo */}
         <div className="flex items-center gap-2 mr-8">
           <a href="/" className="flex items-center gap-2">
@@ -128,6 +153,7 @@ const NavBar: React.FC = () => {
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}

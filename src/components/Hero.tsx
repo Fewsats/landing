@@ -114,7 +114,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+    <div className="relative min-h-screen flex items-center pt-40 sm:pt-32 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10 dot-pattern opacity-50"></div>
       <div className="absolute top-1/3 -right-16 w-96 h-96 bg-deep-purple/10 rounded-full filter blur-3xl"></div>
