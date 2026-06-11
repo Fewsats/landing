@@ -50,13 +50,13 @@ const NavBar: React.FC = () => {
           rel="noopener noreferrer"
           className="block border-b border-[#a7edc0]/30 bg-[#010c0b] text-white transition-colors hover:bg-[#012724]"
         >
-          <div className="container mx-auto flex flex-col items-center justify-center gap-2 px-4 py-2 text-center text-xs sm:flex-row sm:text-sm md:px-8">
-            <span className="rounded-full border border-[#a7edc0]/40 bg-[#012724] px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide text-[#a7edc0]">
+          <div className="container mx-auto flex flex-col items-center justify-center gap-2 px-4 py-2 text-center text-xs sm:flex-row sm:text-sm md:px-8 md:py-3 md:text-base">
+            <span className="rounded-full border border-[#a7edc0]/40 bg-[#012724] px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide text-[#a7edc0] md:px-3 md:py-1 md:text-xs">
               Announcement
             </span>
             <span className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
               <span>Fewsats has joined</span>
-              <img src="/sapiom-logo.svg" alt="Sapiom" width={87} height={18} className="h-4 w-auto" />
+              <img src="/sapiom-logo.svg" alt="Sapiom" width={102} height={21} className="h-4 w-auto md:h-5" />
               <span>to continue building better payment experiences for AI.</span>
             </span>
             <span className="font-medium text-[#a7edc0]">Learn more</span>
